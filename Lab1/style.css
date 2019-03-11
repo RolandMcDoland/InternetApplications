@@ -1,0 +1,41 @@
+*{
+	font-family: Tahoma;
+}
+li { list-style-type: square }
+#price {
+	color: red;
+	font-weight: bold;
+}
+.intro{
+	font-style: italic;
+}
+td img{
+	border-color: blue;
+	border-style: solid;
+}
+td img:hover{
+	border-color: red;
+}
+h1+h2{
+	letter-spacing: 5px;
+}
+td[colspan="2"]>p{
+	font-size: small;
+}
+p{
+	text-align: justify;
+}
+p ~ p{
+	color: gray;
+}
+body{
+	background-image: url(book.jpg);
+	background-repeat: repeat-y;
+	margin: 5em 10em 5em 10em;
+}
+h1{
+	color: red;
+}
+#publisher{
+	text-decoration: underline;
+}

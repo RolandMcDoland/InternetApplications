@@ -1,0 +1,49 @@
+div {
+	border: solid;
+	float: left;
+	margin: 10px;
+	margin-bottom: 20px;
+}
+.inside {
+	clear: right;
+	text-align: center;
+}
+.titles {
+	float: right;
+	margin: 0px;
+	border-right: 0px;
+	border-top: 0px;
+}
+img {
+	width: 100px;
+	float: left;
+}	
+h1 {
+	padding: 35px;
+}
+p {
+	padding: 5px;
+}
+h2 {
+	text-align: center;
+}
+#designer {
+	width: 100%;
+	margin: 0px;
+}
+#designer-text {
+	text-align: center;
+}
+#title {
+	/*TODO szerokosc tytulu*/
+}
+@media only screen and (max-width: 767px) {
+ div { width: 100%; }
+}
+@media only screen and (min-width: 768px) and (max-width: 1023px) {
+ div { width: 100%; }
+ .half {width: 50%; }
+}
+@media only screen and (min-width: 1024px) {
+ div { width: 30%; }
+}
