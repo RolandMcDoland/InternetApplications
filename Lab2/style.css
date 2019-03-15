@@ -42,11 +42,12 @@ h2 {
 	width: 100%;
 	margin: 0px;
 	margin-top: 10px;
-	border-left: none;
-	border-right: none;
+	border: none;
+	border-top: solid;
 	position: absolute;
 	bottom: 0px;
-	height: 100px;
+	height: 75px;
+	padding-top: 5px;
 }
 #designer-text {
 	text-align: center;
@@ -63,29 +64,67 @@ h2 {
 #right {
 	margin-right: 20px;
 }
-.flex-container {
-	display: flex;
-	margin: 0px;
-	border: none;
-	justify-content: space-evenly;
-	margin-bottom:110px;
-}
 html {
 	position: relative;
 	min-height: 100%;
 }
+.flex-container-large {
+	margin: 0px;
+	border: none;
+	margin-bottom:85px;
+	width: 100%;
+}
+.flex-container-medium {
+	margin: 0px;
+	border: none;
+}
+#medium-small {
+	position: absolute;
+	top: 0px;
+}
+#burger {
+	width: 75px;
+}
 @media only screen and (max-width: 767px) {
  div { width: 100%; }
+ #large {
+	visibility: hidden;
+ }
 }
 @media only screen and (min-width: 768px) and (max-width: 1023px) {
- div { width: 100%; }
- .half {width: 50%; }
+ div { width: 50%; }
+ .flex-container-large {width: 100%; }
+ #left {
+	 width: 100%; 
+	 margin-right: 20px;
+	 margin-bottom: 0px;
+ }
+ #middle {
+	 margin-left: 20px;
+ }
+ #lorem {width: 25%; }
+ #large {
+	 visibility: hidden;
+ }
+ .flex-container-medium {
+	display: flex;
+	justify-content: space-evenly;
+	width: 100%;
+ }
 }
 @media only screen and (min-width: 1024px) {
  div { 
-	width: 31%; 
-}
-.flex-container {
+	width: 33%; 
+ }
+ .flex-container-large {
+	display: flex;
+	justify-content: space-evenly;
 	width: 100%;
-}
+ }
+ #medium-small {
+	 visibility: hidden;
+ }
+ .flex-container-medium {
+	 display: contents;
+ }
 }
