@@ -30,6 +30,8 @@ h1 {
 }
 p {
 	margin: 20px;
+	margin-left: 35px;
+	margin-right: 35px;
 }
 h2 {
 	text-align: center;
@@ -40,12 +42,16 @@ h2 {
 	width: 100%;
 	margin: 0px;
 	margin-top: 10px;
+	border-left: none;
+	border-right: none;
+	position: absolute;
+	bottom: 0px;
 }
 #designer-text {
 	text-align: center;
 }
 #title {
-	/*TODO szerokosc tytulu*/
+	width: 500em;
 }
 #title_text {
 	font-size: 200%;
@@ -56,12 +62,12 @@ h2 {
 #right {
 	margin-right: 20px;
 }
-/*#outer {
+.flex-container {
+	display: flex;
 	margin: 0px;
-	padding: 0px;
-	width: 100%;
-	border-width: 0px;
-}*/
+	border: none;
+	justify-content: space-evenly;
+}
 @media only screen and (max-width: 767px) {
  div { width: 100%; }
 }
@@ -71,6 +77,9 @@ h2 {
 }
 @media only screen and (min-width: 1024px) {
  div { 
-	width: 33%; 
+	width: 31%; 
+}
+.flex-container {
+	width: 100%;
 }
 }
