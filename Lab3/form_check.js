@@ -17,6 +17,8 @@ function isEmpty(word){
 };
 
 function validate(formParameter){
+	alterRows(1, document.getElementsByTagName("tr")[0]);
+	
 	var name;
 	
 	name=formParameter.elements["f_fname"];
@@ -155,3 +157,40 @@ function checkZIPCodeRegEx(str) {
 		return false;
 	}
 };
+
+function alterRows(i, e) {
+	if (e) {
+		if (i % 2 == 1) {
+			e.setAttribute("style", "background-color: Aqua;");
+		}
+		e = e.nextSibling;
+		console.log(e);
+		while (e && e.nodeType != 1) {
+			e = e.nextSibling;
+		}
+		alterRows(++i, e);
+	}
+};
+
+function nextNode(e) {
+	while (e && e.nodeType != 1) {
+		e = e.nextSibling;
+	}
+	return e;
+};
+
+function prevNode(e) {
+	while (e && e.nodeType != 1) {
+		e = e.previousSibling;
+	}
+	return e;
+};
+
+function swapRows(b) {
+	var tab = prevNode(b.previousSibling);
+	var tBody = nextNode(tab.firstChild);
+	var lastNode = prevNode(tBody.lastChild);
+	tBody.removeChild(lastNode);
+	var firstNode = nextNode(tBody.firstChild);
+	tBody.insertBefore(lastNode, firstNode);
+}
