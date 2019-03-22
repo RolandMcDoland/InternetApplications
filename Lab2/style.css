@@ -131,14 +131,20 @@ html {
  #right {
 	margin-left: 20px;
  }
+ h1 {
+	display: none;
+ }
 }
 @media only screen and (min-width: 768px) and (max-width: 1023px) {
  div { width: 50%; }
- .flex-container-large {width: 100%; }
+ .flex-container-large {
+	 width: 100%;
+ }
  #left {
 	 width: 100%; 
 	 margin-right: 20px;
 	 margin-bottom: 0px;
+	 margin-top: 0px;
  }
  #middle {
 	 margin-left: 20px;
@@ -154,6 +160,15 @@ html {
  }
  .flex-container-small {
 	 display: contents;
+ }
+ #big {
+	 display: none;
+ }
+ .large_title {
+	 display: none;
+ }
+ .flex-container-large {
+	 margin-top: 55px;
  }
 }
 @media only screen and (min-width: 1024px) {
