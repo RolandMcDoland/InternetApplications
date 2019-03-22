@@ -4,22 +4,23 @@
  <meta charset="utf-8" />
  <title>JavaScript</title>
  <script type="text/javascript" src="form_check.js"></script>
+ <link rel="stylesheet" type="text/css" href="style.css" title="CSS file">
 </head>
 <body>
  <form name="data">
  <table>
- <tr><td>First name</td><td><input type="text" name="f_fname"></td></tr>
+ <tr><td>First name</td><td><input type="text" name="f_fname"><span class="err" id="e_fname" /></td></tr>
  <tr><td>Last Name</td><td><input type="text" name="f_lname"></td></tr>
  <tr>
  <td>Gender</td>
  <td>
- <input name="f_gender" value="f_f" checked type="radio" />female<br />
- <input name="f_gender" value="f_m" type="radio" />male
+ <input onclick="showElement('MaidenName')" name="f_gender" value="f_f" checked type="radio" />female<br />
+ <input onclick="hideElement('MaidenName')" name="f_gender" value="f_m" type="radio" />male
  </td>
  </tr>
- <tr><td>Maiden name</td><td><input type="text" name="f_mname"></td></tr>
+ <tr><td>Maiden name</td><td><span id="MaidenName"><input type="text" name="f_mname"></span></td></tr>
  <tr><td>E-mail</td><td><input type="text" name="f_email"></td></tr>
- <tr><td>Zip code</td><td><input type="text" name="f_zip"></td></tr>
+ <tr><td>Zip code</td><td><input type="text" name="f_zip" onkeyup="checkZIPCodeRegEx(form.elements['f_zip'].value)"><span id="zip" /></td></tr>
  <tr><td>Street</td><td><input type="text" name="f_street"></td></tr>
  <tr><td>City</td><td><input type="text" name="f_city"></td></tr>
  <tr><td>Remarks</td><td><textarea rows="5" cols="15" name="remarks"></textarea>
