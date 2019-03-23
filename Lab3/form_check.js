@@ -193,4 +193,11 @@ function swapRows(b) {
 	tBody.removeChild(lastNode);
 	var firstNode = nextNode(tBody.firstChild);
 	tBody.insertBefore(lastNode, firstNode);
-}
+};
+
+function cnt(form, msg, maxSize) {
+	if (form.value.length > maxSize)
+		form.value = form.value.substring(0, maxSize);
+	else
+		msg.innerHTML = maxSize - form.value.length;
+};

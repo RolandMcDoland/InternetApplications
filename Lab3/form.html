@@ -35,8 +35,17 @@
  <tr><td>Zip code</td><td><input type="text" name="f_zip" onkeyup="checkZIPCodeRegEx(form.elements['f_zip'].value)"><span id="zip" /></td></tr>
  <tr><td>Street</td><td><input type="text" name="f_street"></td></tr>
  <tr><td>City</td><td><input type="text" name="f_city"></td></tr>
- <tr><td>Remarks</td><td><textarea rows="5" cols="15" name="remarks"></textarea>
- </td></tr>
+ <tr>
+ <td>Remarks</td>
+ <td>
+ <textarea rows="5" cols="15" name="remarks"
+ onkeyup="cnt(this.form.remarks, document.getElementById('left'), 150)">
+</textarea>
+ </td>
+</tr>
+<tr>
+ <td><span id="left">150</span> letters left.</td>
+</tr>
  <tr><td colspan="2"><input onclick="return validate(this.form)" type="submit" value="Submit"></td></tr>
  </table>
  </form>
