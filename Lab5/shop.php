@@ -71,7 +71,9 @@ if (isset($_POST['isPosted'])) {
     $rowCount = count($_POST['item']);
 	$flag=1;
     for ($i = 0; $i < $rowCount; $i++) {
-		if(!$db->query("insert into bought values('".$i."','".$_POST['item'][$i]."');")) {
+		$stmt = $db->prepare("insert into bought values(?,?);");
+		$stmt->bind_param('is', $i, $_POST['item'][$i]);
+		if(!$stmt->execute()) {
 			echo "<script>setAlert('Error while buying: ' + $db->error);</script>";
 			$flag=0;
 			break;
