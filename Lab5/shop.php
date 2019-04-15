@@ -67,6 +67,7 @@ $db = new mysqli("localhost", "root", "", "shop_items"); ?>
 
     <?php
 if (isset($_POST['isPosted'])) {
+	$db->begin_transaction();
 	$db->query("delete from bought");
     $rowCount = count($_POST['item']);
 	$flag=1;
@@ -76,10 +77,12 @@ if (isset($_POST['isPosted'])) {
 		if(!$stmt->execute()) {
 			echo "<script>setAlert('Error while buying: ' + $db->error);</script>";
 			$flag=0;
+			$db->rollback();
 			break;
 		}
     }
 	if($flag==1) {
+		$db->commit();
 		echo "<script>setAlert('Succesfully bought!');</script>";
 	}
     session_unset();
