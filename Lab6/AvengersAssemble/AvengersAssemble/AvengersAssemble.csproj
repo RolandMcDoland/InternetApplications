@@ -85,6 +85,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Content\Style.css" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
@@ -94,6 +95,10 @@
     <Content Include="Name.cshtml" />
     <None Include="packages.config" />
     <Content Include="Rules.cshtml" />
+    <Content Include="Suits\_Layout.cshtml" />
+    <Content Include="Suits\Mark3.cshtml" />
+    <Content Include="Suits\Mark6.cshtml" />
+    <Content Include="Suits\_PageStart.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -101,6 +106,9 @@
       <DependentUpon>Web.config</DependentUpon>
     </None>
     <Content Include="Default.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Images\" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
