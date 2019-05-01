@@ -6,3 +6,4 @@ A series of small assignments in different languages used in web design, which a
 * **Lab3**- basic **JavaScript**, simple **form verification**
 * **Lab4**- advanced **JavaScript** with introduction to **jQuery**
 * **Lab5**- basic **PHP**, includes an ugly **basic internet shop**
+* **Lab6**- introduction to **ASP .NET**, containing a few **basic webpages**
