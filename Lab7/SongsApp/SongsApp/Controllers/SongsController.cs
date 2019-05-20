@@ -88,8 +88,8 @@ namespace SongsApp.Controllers
             return View(song);
         }
 
-        // GET: Songs/Delete/5
-        [ActionName("Delete")]
+        // POST: Songs/Delete/5
+        [HttpDelete, ActionName("Delete")]
         public ActionResult Delete(int id)
         {
             Song song = db.Songs.Find(id);

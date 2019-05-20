@@ -81,8 +81,8 @@ namespace SongsApp.Controllers
             return View(genre);
         }
 
-        // GET: Genres/Delete/5
-        [ActionName("Delete")]
+        // POST: Genres/Delete/5
+        [HttpDelete, ActionName("Delete")]
         public ActionResult DeleteConfirmed(int id)
         {
             Genre genre = db.Genres.Find(id);
