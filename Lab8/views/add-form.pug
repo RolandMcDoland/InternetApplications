@@ -1,14 +1,10 @@
 html
  body
     h1 #{title}
-    form(method='POST', action='note/add')
+    form(method='POST', action= `${author}`)
         label Title:
         br 
         input.form-control(name='title', type='text')
-        br
-        label Author:
-        br
-        input.form-control(name='author', type='text')
         br
         label Body:
         br

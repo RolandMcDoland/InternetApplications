@@ -26,7 +26,17 @@ app.post('/', (request, response) => {
             console.log(err);
         }
         else {
-            console.log(notes);
+            response.render('note_list', { 'title': 'Your Notes', 'notes': notes});
+        }
+    });
+});
+
+app.get('/notes/:username', (request, response) => {
+    Note.find({author: request.params.username.replace(/%20/g,' ')}, function(err, notes){
+        if(err) {
+            console.log(err);
+        }
+        else {
             response.render('note_list', { 'title': 'Your Notes', 'notes': notes});
         }
     });
@@ -36,14 +46,14 @@ app.get('/login', (request, response) => {
     response.render('login', { 'title': 'Login' });
 });
 
-app.get('/note/add', (request, response) => {
-    response.render('add-form', { 'title': 'Add new note' });
+app.get('/note/add/:author', (request, response) => {
+    response.render('add-form', { 'title': 'Add new note', 'author': request.params.author.replace(/%20/g,' ')});
 });
 
-app.post('/note/add', (request, response) => {
+app.post('/note/add/:author', (request, response) => {
     let note = new Note();
     note.title = request.body.title;
-    note.author = request.body.author;
+    note.author = request.params.author.replace(/%20/g,' ');
     note.body = request.body.body;
     note.post_date = new Date();
 
@@ -53,7 +63,7 @@ app.post('/note/add', (request, response) => {
             return;
         }
         else {
-            response.redirect('/');
+            response.redirect('/notes/' + note.author);
         }
     });
 });
