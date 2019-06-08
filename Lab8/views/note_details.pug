@@ -3,3 +3,5 @@ html
     h1 #{notes[0].title}
     p #{notes[0].body}
     p #{notes[0].post_date}
+    a(href='/note/delete/' + `${notes[0]._id}` + '/' + `${notes[0].author}`)
+        button(type="button") Delete

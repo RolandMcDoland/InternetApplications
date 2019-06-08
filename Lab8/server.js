@@ -74,8 +74,18 @@ app.get('/note/details/:title', (request, response) => {
             console.log(err);
         }
         else {
-            console.log(notes);
             response.render('note_details', {'notes': notes});
+        }
+    });
+});
+
+app.get('/note/delete/:id/:author', (request, response) => {
+    Note.remove({_id: request.params.id}, function(err, notes){
+        if(err) {
+            console.log(err);
+        }
+        else {
+            response.redirect('/notes/' + request.params.author.replace(/%20/g,' '));
         }
     });
 });
