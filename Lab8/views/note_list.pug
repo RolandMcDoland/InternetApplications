@@ -1,0 +1,7 @@
+html
+ body
+    h1 #{title}
+    ul
+        each note, i in notes
+            li
+                a(href='/note/details/' + `${note.title}`)= note.title

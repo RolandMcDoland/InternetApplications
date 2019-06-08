@@ -1,0 +1,17 @@
+html
+ body
+    h1 #{title}
+    form(method='POST', action='note/add')
+        label Title:
+        br 
+        input.form-control(name='title', type='text')
+        br
+        label Author:
+        br
+        input.form-control(name='author', type='text')
+        br
+        label Body:
+        br
+        textarea.form-control(name='body')
+        br
+        input.btn.btn-primary(type='submit', value='Submit')
