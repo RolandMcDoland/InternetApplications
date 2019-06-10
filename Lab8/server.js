@@ -26,7 +26,7 @@ app.post('/', (request, response) => {
             console.log(err);
         }
         else {
-            response.render('note_list', { 'title': 'Your Notes', 'notes': notes});
+            response.render('note_list', { 'title': 'Your Notes', 'notes': notes, 'author': request.body.username});
         }
     });
 });

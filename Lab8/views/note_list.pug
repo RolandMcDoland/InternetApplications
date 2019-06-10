@@ -5,5 +5,5 @@ html
         each note, i in notes
             li
                 a(href='/note/details/' + `${note.title}`)= note.title
-    a(href='/note/add/' + `${notes[0].author}`)
+    a(href='/note/add/' + `${author}`)
         button(type="button") Add New Note
